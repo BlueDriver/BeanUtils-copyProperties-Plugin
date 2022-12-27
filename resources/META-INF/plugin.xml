@@ -1,0 +1,52 @@
+<idea-plugin>
+    <id>com.github.BlueDriver.BeanUtils-copyProperties</id>
+    <name>BeanUtils.copyProperties</name>
+    <version>1.1</version>
+    <vendor email="cpwu@foxmail.com" url="https://github.com/BlueDriver">BlueDriver</vendor>
+
+    <description><![CDATA[
+      Generate the code of target object's setter method(s) according to source object.<br>
+      <h3>How to use?</h3>
+      <ol>
+          <li>Put the caret in the variable name of target object.</li>
+          <li>Press Alt+Ins/CMD+N and select the menu "Copy Properties".</li>
+          <li>Choose the fields that you want to copy.</li>
+          <li>Enter the variable name of source object and click OK.</li>
+      </ol>
+    ]]></description>
+
+    <!--<change-notes><![CDATA[-->
+    <!--Add change notes here.<br>-->
+    <!--<em>most HTML tags may be used</em>-->
+    <!--]]>-->
+    <!--</change-notes>-->
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+
+        <!--代码生成-->
+        <group id="com.github.bd.b.c">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+            <!--生成属性复制代码-->
+            <action id="bc" class="com.github.bd.b.c.GenerateSetterAction"
+                    text="Copy Properties"
+                    description="Generate the code of target object's setter method(s) according to source object.">
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>
